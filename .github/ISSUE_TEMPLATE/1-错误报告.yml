@@ -1,14 +1,14 @@
 name: 错误报告
-about: 如果一个功能未及预期, 或是出现了明显的错误, 则使用此模版.
+description: 如果一个功能未及预期, 或是出现了明显的错误, 则使用此模版.
 title: "[BUG/CN] <title>"
 labels: New
-assignees: ''
+assignees: []
 body:
   - type: markdown
     id: main_input
     attributes:
-      label: 填写报告模板
       value: |
+        在这里根据模板填写对应必要的信息。你可以直接按<>/[]内的内容提示来将你的具体情况覆盖进去。
         > 在开始之前, 你必须明确: 你使用的是当前通道最新版本的LauncherX, 并且你的问题在所有议题中没有重合, 并且在CSKB的常见问题中没有现成的解决方案.
 
         ## 问题说明
