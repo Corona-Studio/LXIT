@@ -1,6 +1,8 @@
 blank_issues_enabled: true
 contact_links:
   - name: 【!】普通用户请勿提交非模板的议题
+    url: '#'
     about: 非模板议题将会被以【无效】为由直接关闭。  
   - name: '【!】Ordinary users: DO NOT submit issues WITHOUT A TEMPLATE'
+    url: '#'
     about: the non-template-formed issues will be closed as [invalid]
