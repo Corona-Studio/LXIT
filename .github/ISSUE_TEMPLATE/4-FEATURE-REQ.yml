@@ -1,6 +1,6 @@
 name: Feature Request
-description: 想要一个新功能？使用此模版！
-title: "[FEAT/EN] <填写一个简练的标题。不要动开头的标签。>"
+description: Use this template if you want to request a new function!
+title: "[FEAT/EN] <Replace this with a brief title and keep the [tag] remain.>"
 labels: 
   - New
   - imagine / 设想
@@ -10,39 +10,39 @@ body:
   - type: textarea
     id: main_input
     attributes:
-      label: 填写模板
+      label: Fill in this template
       value: |
  
-        > 在开始之前, 你必须明确: 你使用的是当前通道最新版本的LauncherX, 你已经在CSKB或通过其他渠道确认了事实上LauncherX没有这样的功能，并且你的问题在所有议题中没有重合, 并且你请求的功能确实存在一定的需求群体.
+        > Before we start, you need to make sure: You're using the latest version of LauncherX in your channel, you're sure that this function is not presented yet (even after a look up on CSKB) or not good enough, and your issue is not duplicated, meanwhile this function will do helps to a specific group of users.
 
-        ## 这是个什么样的功能？
-        *// 如果你的需求太宽泛，则应当分为多个议题进行提交。*
+        ## What do you want exactly?
+        *// Describe it. if it's too vast, submit multiple issues for all you want.*
 
-        ## 为什么需要这样的功能？
-        *// 这个功能能带来很大的便利吗？*
+        ## Why you need such a function?
+        *// Is this really can bring you convenience or enhance your experience?*
 
-        ## 你自己会很频繁执行这样的操作吗？这个功能是否必须为启动器实现的？
-        执行这些操作, 有概率 (或是绝对) 出现上述的问题:
+        ## Referring to the function does, is this something can simplify your frequent action? Is that a function that must to be implemented by launcher?
+        *// well, ask yourself pls. If you even cannot persuade yourself, then won't persuade us.*
 
-        ## 图示
-        *// 直接上传/粘贴在这里就好。可以是自己用软件或HTML绘制的示意图，也可以是不那么抽象的手绘示意图，或者直接在LauncherX的截图上写写画画。*
+        ## Optional Illustration / Pcturesigns
+        *// Paste your HTML-UI-Design/Not Too Abstracted sketch/Screenshot of LauncherX with your signs that describes your thoughts*
 
 #        
   - type: textarea
     id: additional
     attributes: 
-      label: 附加信息
-      value: 其他相关内容写在这里. 如果你在LauncherX交流群中，可以在这里留下你的群昵称，以便我们发起实时问询。
+      label: Additional
+      value: Write down any related additional info here. If you're in our official group chat, you can leave your ID here and we can start an instant asking here.
   
 #
   - type: checkboxes
     id: prerequisites
     attributes:
-      label: 选项
-      description: 在提交前请确认以下事项
+      label: Checklist
+      description: 'Please make sure:'
       options:
-        - label: 我已搜索过现有议题，没有找到相似的议题
+        - label: I promise there's no duplication after I did the search in all existing issues.
           required: true
-        - label: 我确认我的LauncherX是当前通道的最新版本，且没有我需要的功能，或是功能还有进步的空间
+        - label: I'm sure that my LauncherX has updated to the latest version in my channel, and it's compatible to my system.
           required: true
-        - label: 我希望在交流群进行问询
+        - label: I hope to receive an instant ask.
