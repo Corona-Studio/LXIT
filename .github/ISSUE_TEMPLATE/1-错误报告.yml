@@ -7,6 +7,7 @@ body:
   - type: textarea
     id: main_input
     attributes:
+      label: 填写模板
       value: |
         在这里根据模板填写对应必要的信息。你可以直接按<>/[]内的内容提示来将你的具体情况覆盖进去。
         > 在开始之前, 你必须明确: 你使用的是当前通道最新版本的LauncherX, 并且你的问题在所有议题中没有重合, 并且在CSKB的常见问题中没有现成的解决方案.
