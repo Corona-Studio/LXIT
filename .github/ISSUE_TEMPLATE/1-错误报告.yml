@@ -1,10 +1,10 @@
 name: 错误报告
 description: 如果一个功能未及预期, 或是出现了明显的错误, 则使用此模版.
-title: "[BUG/CN] <title>"
+title: "[BUG/CN] <填写一个简练的标题。不要动开头的标签。>"
 labels: New
 assignees: []
 body:
-  - type: markdown
+  - type: textarea
     id: main_input
     attributes:
       value: |
