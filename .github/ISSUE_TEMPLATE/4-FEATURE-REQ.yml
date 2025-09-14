@@ -1,0 +1,48 @@
+name: 错误报告
+description: 想要一个新功能？使用此模版！
+title: "[FEAT/CN] <填写一个简练的标题。不要动开头的标签。>"
+labels: 
+  - New
+  - imagine / 设想
+assignees: 
+  - fr1g
+body:
+  - type: textarea
+    id: main_input
+    attributes:
+      label: 填写模板
+      value: |
+ 
+        > 在开始之前, 你必须明确: 你使用的是当前通道最新版本的LauncherX, 你已经在CSKB或通过其他渠道确认了事实上LauncherX没有这样的功能，并且你的问题在所有议题中没有重合, 并且你请求的功能确实存在一定的需求群体.
+
+        ## 这是个什么样的功能？
+        *// 如果你的需求太宽泛，则应当分为多个议题进行提交。*
+
+        ## 为什么需要这样的功能？
+        *// 这个功能能带来很大的便利吗？*
+
+        ## 你自己会很频繁执行这样的操作吗？这个功能是否必须为启动器实现的？
+        执行这些操作, 有概率 (或是绝对) 出现上述的问题:
+
+        ## 图示
+        *// 直接上传/粘贴在这里就好。可以是自己用软件或HTML绘制的示意图，也可以是不那么抽象的手绘示意图，或者直接在LauncherX的截图上写写画画。*
+
+#        
+  - type: textarea
+    id: additional
+    attributes: 
+      label: 附加信息
+      value: 其他相关内容写在这里. 如果你在LauncherX交流群中，可以在这里留下你的群昵称，以便我们发起实时问询。
+  
+#
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: 选项
+      description: 在提交前请确认以下事项
+      options:
+        - label: 我已搜索过现有议题，没有找到相似的议题
+          required: true
+        - label: 我确认我的LauncherX是当前通道的最新版本，且没有我需要的功能，或是功能还有进步的空间
+          required: true
+        - label: 我希望在交流群进行问询
