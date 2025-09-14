@@ -1,8 +1,8 @@
 blank_issues_enabled: true
 contact_links:
-  - name: 【!】普通用户请勿提交非模板的议题
+  - name: 【!】普通用户请勿提交非模板的议题（不要用blank issue！）
     url: 'https://kb.corona.studio/zhCN/lxguide/report-issue'
     about: 非模板议题将会被以【无效】为由直接关闭。  
-  - name: '【!】Ordinary users: DO NOT submit issues WITHOUT A TEMPLATE'
+  - name: "【!】Ordinary users: DO NOT submit issues WITHOUT A TEMPLATE (don't use blank issue!)"
     url: 'https://kb.corona.studio/zhCN/lxguide/report-issue.html'
     about: the non-template-formed issues will be closed as [invalid]
