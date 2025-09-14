@@ -1,9 +1,6 @@
-blank_issues_enabled: false
-
-# contact_links:
-#   - name: GitHub Community Support
-#     url: https://github.com/orgs/community/discussions
-#     about: Please ask and answer questions here.
-#   - name: GitHub Security Bug Bounty
-#     url: https://bounty.github.com/
-#     about: Please report security vulnerabilities here.
+blank_issues_enabled: true
+contact_links:
+  - name: 【!】普通用户请勿提交非模板的议题
+    about: 非模板议题将会被以【无效】为由直接关闭。  
+  - name: '【!】Ordinary users: DO NOT submit issues WITHOUT A TEMPLATE'
+    about: the non-template-formed issues will be closed as [invalid]
