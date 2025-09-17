@@ -1,6 +1,6 @@
 name: 功能建议
 description: 想要一个新功能？使用此模版！
-title: "[FEAT/CN] <填写一个简练的标题。不要动开头的标签。>"
+title: "[FEAT/CN] <把这里替换成一个简练的标题。不要动开头的标签。>"
 labels: 
   - New
   - imagine / 设想
