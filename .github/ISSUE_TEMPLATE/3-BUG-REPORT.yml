@@ -4,65 +4,145 @@ title: "[BUG/EN] <Replace this with a brief title and keep the [tag] remain.>"
 labels: New
 assignees: []
 body:
-  - type: textarea
-    id: main_input
+  - type: markdown
     attributes:
-      label: Fill in the template - Replace the content wrapped with <>/[] to your situation.
       value: |
+        > [!IMPORTANT]
+        > In CSKB, the English pages are significantly less comprehensive than the Chinese pages, so all links redirect to the Chinese pages.
+        
+        Before you start, you must confirm:
 
-        > Before we start, you need to make sure: You're using the latest version of LauncherX in your channel, and your issue is not duplicated, meanwhile here's no solution on CSKB.
+        - You are using the latest version of LauncherX from the current channel.
+        - Your issue does not duplicate any existing open or closed issues.
+        - There is no existing solution in the [CSKB (Chinese)](https://kb.corona.studio/zhCN/lxguide/faq.html) FAQ.
 
-        ## Describe the problem
-        *// Briefly describe your problem. If your problem is related to multiple functions, or too vast, please open issues one by one.*
-
-        How frequent does the problem happen? `(0~100)`%
-
-        ## Essentials
-        - Which version of LauncherX you're using? [Fill in the number series from「Settings-About-Binary Version」which refers to a version number]
-        - What kind of your operating system? Which version? [OS Name, Detailed Version, Architecture]
-        - Is this related to a specific game? You can upload a zipped version directory/Link to the modpack/Game Version. []
-
-        ## How to reproduce
-        Following the following steps, here's a chance/ or absolutely will make the problem happen:
-
-        *example*
-        1. In '...' as a premise
-        2. open view '....' 
-        3. find out / goto '....', and then click ''
-        4. '...'
-        5. Here we go! the problem.
-
-        ## Expected behaviour
-        *According to your understanding of the shown function, what should LauncherX perform?*
-
-        ## Related papertrails 
-        ### Logs
-        *How to find useful logs (CSKB, Chinese): https://kb.corona.studio/zhCN/lxguide/report-issue.html#%E5%8F%A6%E5%A4%96-%E5%93%AA%E4%BA%9B%E7%94%A8%E4%BA%8E%E5%8F%8D%E9%A6%88%E7%9A%84%E4%BF%A1%E6%81%AF%E6%98%AF%E6%9C%89%E7%94%A8%E7%9A%84-%E8%AF%A5%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E6%9C%89%E7%94%A8%E7%9A%84%E4%BF%A1%E6%81%AF *
-
-        1. [log file name, and where you find it]
-        ````` logs
-        // Replace here to your logs, or upload your logs to mclo.gs (or similar tools) and provide the shared link here.
-        `````
-
-        ### Screenshot or recordings
-        *just paste them here, or cloud-drive links. the must-login cloud drives are prohibited.*
-
-#        
-  - type: textarea
-    id: additional
-    attributes: 
-      label: Additional Info
-      value: Write down any related additional info here. If you're in our official group chat, you can leave your ID here and we can start an instant asking here.
-  
-#
   - type: checkboxes
-    id: prerequisites
+    id: check
     attributes:
-      label: Checklist
-      description: 'Please make sure:'
+      label: Pre-submission Checks
+      description: Confirm your actions.
       options:
-        - label: I promise there's no duplication after I did the search in all existing issues.
+        - label: I have checked for updates before submitting and confirm I am using the latest version of LauncherX.
           required: true
-        - label: I'm sure that my LauncherX has updated to the latest version in my channel, and it's compatible to my system.
+
+        - label: I have checked the [Environment Requirements (Chinese)](https://kb.corona.studio/zhCN/lxguide/startup/#%E7%8E%AF%E5%A2%83%E8%A6%81%E6%B1%82) and confirm LauncherX is compatible with my system.
           required: true
-        - label: I hope to receive an instant ask.
+
+        - label: My issue does not duplicate any existing open or closed issues.
+          required: true
+
+        - label: My issue has no existing solution in the [CSKB (Chinese)](https://kb.corona.studio/zhCN/lxguide/faq.html) FAQ.
+          required: true
+
+        - label: My issue is not related to Minecraft-specific problems unrelated to LauncherX itself (like Mod conflicts), and I understand that if the issue is related to Minecraft itself, I should report it to the Mod author or Mojang.
+          required: true
+
+        - label: I would like to ask in the community chat group. (Optional)
+
+  - type: textarea
+    id: issue_description
+    attributes:
+      label: Issue Description
+      description: "Briefly describe the problem you encountered. One issue should only report one specific problem or problems related to one feature. Broad or multiple issues must be split into separate issues."
+      placeholder: |
+        Example: LauncherX fails to start normally.
+    validations:
+      required: true
+
+  - type: input
+    id: prevalence
+    attributes:
+      label: How often does this issue occur?
+      placeholder: "(0~100)%"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: update_channel
+    attributes:
+      label: Which update channel are you using?
+      description: Check your current update channel under Settings > Account > Update Channel and Release Branch.
+      options:
+        - Stable
+        - Proton [Slow]
+        - Neutrino [Fast]
+        - Higgs [Fastest]
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: What version of LauncherX are you using?
+      description: "Please provide the version number found under 'Settings > About > Binary Version'."
+      placeholder: "e.g., 2.498.2473.0"
+    validations:
+      required: true
+
+  - type: input
+    id: system_version
+    attributes:
+      label: What operating system are you using?
+      description: |
+        Please provide the specific version number and architecture.
+
+        This information can usually be found in your system settings.
+      placeholder: "e.g., Windows 10 22H2 19045.6456 x64"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction_steps
+    attributes:
+      label: Steps to Reproduce
+      description: |
+        How can the bug be reproduced?
+
+        Please be as detailed yet concise as possible. If applicable, start from when LauncherX opens until the bug occurs.
+      placeholder: |
+        Example:
+        1. Given that ......
+        2. Open ...... (describe the steps)
+        3. The bug occurs.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: |
+        What did you expect LauncherX to do?
+      placeholder: |
+        Example:
+        It should have opened ...... (what it should normally do)
+    validations:
+      required: true
+
+  - type: textarea
+    id: more_information
+    attributes:
+      label: Additional Information
+      description: |
+        Is there anything else to add?
+
+        For example:
+        - Does it involve a specific game/modpack? If it's a modpack, provide a download link. (Include game version / modpack link, optional)
+
+  - type: textarea
+    id: log
+    attributes:
+      label: Logs (if applicable)
+      description: "Refer to [CSKB (Chinese)](https://kb.corona.studio/zhCN/lxguide/report-issue.html#%E5%8F%A6%E5%A4%96-%E5%93%AA%E4%BA%9B%E7%94%A8%E4%BA%8E%E5%8F%8D%E9%A6%88%E7%9A%84%E4%BF%A1%E6%81%AF%E6%98%AF%E6%9C%89%E7%94%A8%E7%9A%84-%E8%AF%A5%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E6%9C%89%E7%94%A8%E7%9A%84%E4%BF%A1%E6%81%AF) for instructions on how to obtain relevant logs, and paste the found logs directly here. (Do not upload log files here; paste the content directly.)"
+      render: log
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshots (if applicable)
+      description: |
+        Please attach relevant screenshots here to help us understand the issue more intuitively.
+
+        Please note that this issue is public; be careful not to leak any private information.
+      placeholder: |
+        You can paste a screenshot from your clipboard directly here using Ctrl + V.

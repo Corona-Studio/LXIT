@@ -7,42 +7,69 @@ labels:
 assignees: 
   - fr1g
 body:
-  - type: textarea
-    id: main_input
+  - type: markdown
     attributes:
-      label: Fill in this template
       value: |
- 
-        > Before we start, you need to make sure: You're using the latest version of LauncherX in your channel, you're sure that this function is not presented yet (even after a look up on CSKB) or not good enough, and your issue is not duplicated, meanwhile this function will do helps to a specific group of users.
+        > [!IMPORTANT]
+        > In CSKB, the English pages are significantly less comprehensive than the Chinese pages, so all links redirect to the Chinese pages.
+        
+        Before you start, you must confirm:
+        
+        - You are using the latest version of LauncherX from the current channel.
+        - You have already checked the [CSKB](https://kb.corona.studio/zhCN/lxguide/startup/) or other channels and confirmed that LauncherX indeed doesn't have such a feature (or it's not good enough yet).
+        - Your request doesn't duplicate any existing issues, and the feature you're requesting has a reasonable potential user base.
 
-        ## What do you want exactly?
-        *// Describe it. if it's too vast, submit multiple issues for all you want.*
+  - type: checkboxes
+    id: check
+    attributes:
+      label: Confirmation
+      description: Please confirm the following before submitting
+      options:
+        - label: I have searched existing issues and found no similar requests.
+          required: true
 
-        ## Why you need such a function?
-        *// Is this really can bring you convenience or enhance your experience?*
+        - label: I confirm I'm using the latest version of LauncherX in the current channel, and the feature I need is either missing or could be improved.
+          required: true
 
-        ## Referring to the function does, is this something can simplify your frequent action? Is that a function that must to be implemented by launcher?
-        *// well, ask yourself pls. If you even cannot persuade yourself, then won't persuade us.*
+        - label: I would like to ask in the community chat group. (Optional)
 
-        ## Optional Illustration / Pcturesigns
-        *// Paste your HTML-UI-Design/Not Too Abstracted sketch/Screenshot of LauncherX with your signs that describes your thoughts*
+  - type: textarea
+    id: function_description
+    attributes:
+      label: What kind of feature is this?
+      description: "If your request is too broad, it should be split into multiple separate issues."
+    validations:
+      required: true
 
-#        
+  - type: textarea
+    id: reason_for_feature
+    attributes:
+      label: Why is this feature needed?
+      description: "Will this feature provide significant convenience?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: usage_frequency
+    attributes:
+      label: How often would you personally perform such operations? Does this feature really need to be implemented in the launcher?
+      description: "Be honest with yourself (hmm)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: related_images
+    attributes:
+      label: Related Images
+      description: "You can directly upload or Ctrl+V paste here. These could be mockups made with software or HTML, less abstract hand-drawn sketches, or annotated screenshots of LauncherX."
+    validations:
+      required: true
+  
   - type: textarea
     id: additional
     attributes: 
-      label: Additional
-      value: Write down any related additional info here. If you're in our official group chat, you can leave your ID here and we can start an instant asking here.
-  
-#
-  - type: checkboxes
-    id: prerequisites
-    attributes:
-      label: Checklist
-      description: 'Please make sure:'
-      options:
-        - label: I promise there's no duplication after I did the search in all existing issues.
-          required: true
-        - label: I'm sure that my LauncherX has updated to the latest version in my channel, and it's compatible to my system.
-          required: true
-        - label: I hope to receive an instant ask.
+      label: Additional Information
+      description: |
+        Write other relevant content here.
+        
+        If you're in the LauncherX community chat group, you can leave your group nickname here so we can reach out for real-time discussion if needed.

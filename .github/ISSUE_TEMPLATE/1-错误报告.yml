@@ -1,68 +1,145 @@
 name: 错误报告
 description: 如果一个功能未及预期, 或是出现了明显的错误, 则使用此模版.
-title: "[BUG/CN] <把这里替换成一个简练的标题。不要动开头的标签。>"
+title: "[BUG/CN] <把这里替换成一个简练的标题, 不要动开头的标签.>"
 labels: New
 assignees: []
 body:
-  - type: textarea
-    id: main_input
+  - type: markdown
     attributes:
-      label: 在这里根据模板填写对应必要的信息。你可以直接按<>/[]内的内容提示来将你的具体情况覆盖(替换)进去。
       value: |
+        在开始之前, 你必须明确:
 
-        > 在开始之前, 你必须明确: 你使用的是当前通道最新版本的LauncherX, 并且你的问题在所有议题中没有重合, 并且在CSKB的常见问题中没有现成的解决方案.
+        - 你使用的是当前通道最新版本的LauncherX. 
+        - 你的问题在所有议题中没有重合.
+        - 在 [CSKB](https://kb.corona.studio/zhCN/lxguide/faq.html) 的常见问题中没有现成的解决方案.
 
-        ## 问题说明
-        *// 简要描述出现了什么问题. 一条议题仅能反馈一个问题或属于一个功能的问题, 太宽泛的多个问题必须分为多个议题分别提交*
-
-        这个问题出现的概率有多大? `(0~100)`%
-
-        ## 前提
-        - 你使用的LauncherX版本号为? [在这里填写「设置-关于-二进制版本」的版本号]
-        - 你的操作系统是什么版本? [在这里填写操作系统大版本、具体版本号、体系结构]
-        - 涉及有具体的游戏吗? 如果是整合包, 提供整合包下载链接. [填入游戏版本号/整合包链接/或不填]
-
-        ## 复现步骤
-        执行这些操作, 有概率 (或是绝对) 出现上述的问题:
-
-        *示例:*
-        1. 在 '...' 前提下
-        2. 打开 '....' 界面
-        3. 找到 '....', 然后点击 ‘...’
-        4. ‘...’
-        5. 出现错误.
-
-        ## 预期行为
-        *根据你对界面和功能的理解, LauncherX本来应该完成什么工作?*
-
-        ## 相关线索
-        ### 日志
-        *前往CSKB查阅获取相关日志的方法: https://kb.corona.studio/zhCN/lxguide/report-issue.html#%E5%8F%A6%E5%A4%96-%E5%93%AA%E4%BA%9B%E7%94%A8%E4%BA%8E%E5%8F%8D%E9%A6%88%E7%9A%84%E4%BF%A1%E6%81%AF%E6%98%AF%E6%9C%89%E7%94%A8%E7%9A%84-%E8%AF%A5%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E6%9C%89%E7%94%A8%E7%9A%84%E4%BF%A1%E6%81%AF *
-
-        1. 
-        ````` logs
-        // 将这里替换为你找到的日志. 使用代码块包裹不同文件内保存的日志并标注文件名, 或者使用 mclo.gs 上传日志到云端.
-        `````
-
-        ### 截图和录屏
-        *直接上传/粘贴在这里就好*
-
-#        
-  - type: textarea
-    id: additional
-    attributes: 
-      label: 附加信息
-      value: 其他相关内容写在这里. 如果你在LauncherX交流群中，可以在这里留下你的群昵称，以便我们发起实时问询。
-  
-#
   - type: checkboxes
-    id: prerequisites
+    id: check
     attributes:
-      label: 选项
-      description: 在提交前请确认以下事项
+      label: 事先确认
+      description: 确认你的操作.
       options:
-        - label: 我已搜索过现有议题，没有找到相似的议题
+        - label: 我在提交之前检查了更新, 确认我在使用最新版本的 LauncherX.
           required: true
-        - label: 我确认我的LauncherX符合系统体系结构，与我的设备和系统兼容，并且已经更新到当前通道的最新版本
+
+        - label: 我确认在 [环境要求](https://kb.corona.studio/zhCN/lxguide/startup/#%E7%8E%AF%E5%A2%83%E8%A6%81%E6%B1%82) 中进行了检查, 确认 LauncherX 和我的系统兼容.
           required: true
-        - label: 我希望在交流群进行问询
+
+        - label: 我的问题未在已有的已开放 / 已关闭议题中重合.
+          required: true
+
+        - label: 我的问题在 [CSKB](https://kb.corona.studio/zhCN/lxguide/faq.html) 的常见问题中无解决方案.
+          required: true
+
+        - label: 我的问题与 Mod 冲突之类的与 LauncherX 本身无关的 Minecraft 问题无关, 且我知道问题如果和 Minecraft 本身有关, 我应该向 Mod 作者或 Minecraft 官方反馈.
+          required: true
+
+        - label: 我想要在交流群问询. (可选)
+
+  - type: textarea
+    id: issue_description
+    attributes:
+      label: 问题说明
+      description: "简要描述出现了什么问题, 一条议题仅能反馈一个问题或属于一个功能的问题, 太宽泛的多个问题必须分为多个议题分别提交"
+      placeholder: |
+        例如: LauncherX 无法正常启动
+    validations:
+      required: true
+
+  - type: input
+    id: prevalence
+    attributes:
+      label: 这个问题出现的概率有多大?
+      placeholder: "(0~100)%"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: update_channel
+    attributes:
+      label: 你在使用哪个更新通道?
+      description: 在**设置 > 启动器账户 > 更新通道和发行分支**中查看当前的更新通道.
+      options:
+        - 稳定
+        - 质子 (慢速)
+        - 中微子 (快速)
+        - 希格斯 (最快)
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 使用的LauncherX版本号为?
+      description: "只接受「设置 > 关于 > 二进制版本」中的版本号."
+      placeholder: "例如: 2.498.2473.0"
+    validations:
+      required: true
+
+  - type: input
+    id: system_version
+    attributes:
+      label: 你在使用什么操作系统?
+      description: |
+        填写具体版本号和系统架构.
+
+        这些信息通常可以在设置中找到.
+      placeholder: "例如: Windows 10 22H2 19045.6456 x64"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction_steps
+    attributes:
+      label: 复现步骤
+      description: |
+        该 Bug 如何复现? 
+        
+        尽可能的详细并简洁. 如果可以, 最好从 LauncherX 打开时开始, 并知道复现 Bug.
+      placeholder: |
+        例如:
+        1. 在 ...... 前提下.
+        2. 打开...... (描述复现步骤)
+        3. 出现 Bug.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: 预期行为
+      description: |
+        你认为 LauncherX 本来应该如何工作?
+      placeholder: |
+        例如:
+        它应该打开 ...... (正常应该做的操作)
+    validations:
+      required: true
+
+  - type: textarea
+    id: more_information
+    attributes:
+      label: 更多信息
+      description: |
+        还有更多要补充的信息吗?
+
+        比如:
+        - 涉及有具体的游戏吗? 如果是整合包, 提供整合包下载链接. (并附带游戏版本号 / 整合包链接, 可选)
+
+  - type: textarea
+    id: log
+    attributes:
+      label: 日志 (如果适用)
+      description: "从 [CSKB](https://kb.corona.studio/zhCN/lxguide/report-issue.html#%E5%8F%A6%E5%A4%96-%E5%93%AA%E4%BA%9B%E7%94%A8%E4%BA%8E%E5%8F%8D%E9%A6%88%E7%9A%84%E4%BF%A1%E6%81%AF%E6%98%AF%E6%9C%89%E7%94%A8%E7%9A%84-%E8%AF%A5%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E6%9C%89%E7%94%A8%E7%9A%84%E4%BF%A1%E6%81%AF) 查阅如何获取相关日志, 并将找到的日志直接粘贴到此处. (不要上传日志文件到这里, 直接粘贴内容.)"
+      render: log
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 截图 (如果适用)
+      description: |
+        在这里附上相关截图, 以便我们能够更直观的理解问题.
+
+        该 issue 是公开的, 注意不要泄露你的隐私信息.
+      placeholder: |
+        直接 Ctrl + V 即可将剪切板中的截图粘贴到此处.
